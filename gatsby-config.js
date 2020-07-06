@@ -4,7 +4,22 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    // Used for the title template on pages other than the index site
+    siteTitle: `샌드`,
+    // Default title of the page
+    siteTitleAlt: `샌드 - Gatsby 정적사이트입니다.`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `샌드 - Gatsby 정적사이트입니다.`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://sand.ga`,
+    // Used for SEO
+    siteDescription: `정적사이트 생성기 Gatsby로 만든 블로그입니다. 기능도 많고 상당히 깔끔해서 꾸미기 좋은 테마라고 생각합니다.`,
+    // Will be set on the <html /> tag
+    siteLanguage: `ko`,
+    // Used for og:image and must be placed inside the `static` folder
+    siteImage: `/banner.jpg`,
+    // Twitter Handle
+    author: `@solut2000`,
   },
   plugins: [
     {
@@ -13,11 +28,11 @@ module.exports = {
       options: {
         navigation: [
           {
-            title: `Blog`,
+            title: `블로그`,
             slug: `/blog`,
           },
           {
-            title: `About`,
+            title: `알아보기`,
             slug: `/about`,
           },
         ],
@@ -31,6 +46,7 @@ module.exports = {
             url: `https://www.instagram.com/lekoarts.de/`,
           },
         ],
+        formatString: `YYYY.MM.DD`,
       },
     },
     {
